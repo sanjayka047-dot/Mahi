@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy Anniversary Papa 💖</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <!-- Floating hearts -->
+  <div class="hearts" aria-hidden="true"></div>
+
+  <!-- Background music -->
+  <audio id="bgMusic" preload="auto">
+    <source src="assets/perfect.mp3" type="audio/mpeg" />
+  </audio>
+
+  <!-- Main container -->
+  <main class="app">
+
+    <!-- TOP BAR -->
+    <header class="topbar">
+      <div class="chip">Sanjay 💌 Papa</div>
+      <button id="musicBtn" class="musicBtn" type="button">
+        🔊 Play Song
+      </button>
+    </header>
+
+    <!-- PAGE 1 -->
+    <section class="page active" id="page1">
+      <div class="card hero">
+        <div class="badge">14 Feb</div>
+        <h1>Happy 3rd Year Love Anniversary<br><span>Papa 💖</span></h1>
+        <p class="sub">3 years… and still my favourite person.</p>
+        <div class="btnRow">
+          <button class="btn primary" id="openSurprise" type="button">Open Surprise ✨</button>
+        </div>
+        <p class="tiny">(Tap once to start music 🎶)</p>
+      </div>
+    </section>
+
+    <!-- PAGE 2 -->
+    <section class="page" id="page2">
+      <div class="card">
+        <h2>Papa… 🥺</h2>
+        <p class="sub">Will you always be mine?</p>
+        <div class="btnRow">
+          <button class="btn yes" id="yesBtn" type="button">YES 💘</button>
+          <button class="btn no" id="noBtn" type="button">NO 🙄</button>
+        </div>
+        <p class="tiny">No button ah pudikka try pannunga 😆</p>
+      </div>
+    </section>
+
+    <!-- PAGE 3 -->
+    <section class="page" id="page3">
+      <div class="card">
+        <h2>For you, Papa ❤️</h2>
+        <div class="letterBox" id="letterBox"></div>
+        <div class="btnRow">
+          <button class="btn primary" id="nextToPhotos" type="button">One last thing… 💫</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAGE 4 -->
+    <section class="page" id="page4">
+      <div class="card">
+        <h2>Our Memories 📸</h2>
+        <p class="sub">Always you. Always us.</p>
+        <div class="gallery">
+          <div class="frame"><img src="assets/photo1.jpg" alt="Memory 1"></div>
+          <div class="frame"><img src="assets/photo2.jpg" alt="Memory 2"></div>
+          <div class="frame"><img src="assets/photo3.jpg" alt="Memory 3"></div>
+        </div>
+        <div class="finalLine"><span>— Sanjay ❤️</span></div>
+        <div class="btnRow">
+          <button class="btn primary" id="replayBtn" type="button">Replay 🔁</button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

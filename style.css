@@ -1,0 +1,230 @@
+:root{
+  --bg1:#0b0b16;
+  --bg2:#140b1f;
+  --card:#ffffff10;
+  --card2:#ffffff14;
+  --text:#fff;
+  --muted:#d7d7e6;
+  --pink:#ff4da6;
+  --pink2:#ff7bc3;
+  --blue:#6ee7ff;
+  --radius:22px;
+}
+
+*{ box-sizing:border-box; }
+body{
+  margin:0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial;
+  color:var(--text);
+  min-height:100vh;
+  background: radial-gradient(1000px 700px at 20% 10%, #2a1450 0%, transparent 55%),
+              radial-gradient(1000px 700px at 80% 30%, #1a3b5a 0%, transparent 55%),
+              linear-gradient(180deg, var(--bg1), var(--bg2));
+  overflow-x:hidden;
+}
+
+.app{
+  max-width: 520px;
+  margin: 0 auto;
+  padding: 14px 14px 28px;
+}
+
+.topbar{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  padding: 10px 4px 14px;
+}
+
+.chip{
+  background: #ffffff14;
+  border: 1px solid #ffffff1f;
+  padding: 10px 14px;
+  border-radius: 999px;
+  font-weight: 650;
+  letter-spacing: .2px;
+}
+
+.musicBtn{
+  border: 1px solid #ffffff25;
+  background: #ffffff10;
+  color: white;
+  padding: 10px 14px;
+  border-radius: 999px;
+  cursor:pointer;
+  font-weight: 650;
+}
+
+.page{
+  display:none;
+  animation: fadeIn .35s ease;
+}
+
+.page.active{ display:block; }
+
+.card{
+  background: linear-gradient(180deg, var(--card), var(--card2));
+  border: 1px solid #ffffff1f;
+  border-radius: var(--radius);
+  padding: 18px;
+  box-shadow: 0 18px 50px #00000055;
+  backdrop-filter: blur(10px);
+}
+
+.hero h1{
+  margin: 10px 0 6px;
+  font-size: 1.75rem;
+  line-height: 1.1;
+}
+
+.hero h1 span{
+  color: var(--pink2);
+  text-shadow: 0 0 18px #ff4da655;
+}
+
+.badge{
+  display:inline-block;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: #ffffff12;
+  border: 1px solid #ffffff1f;
+  font-weight: 650;
+  color: var(--muted);
+}
+
+.sub{
+  margin: 8px 0 18px;
+  color: var(--muted);
+  line-height: 1.45;
+}
+
+.btnRow{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-top: 10px;
+}
+
+.btn{
+  border:none;
+  padding: 12px 16px;
+  border-radius: 16px;
+  font-weight: 750;
+  cursor:pointer;
+  flex: 1;
+  min-width: 130px;
+}
+
+.btn.primary{
+  background: linear-gradient(90deg, var(--pink), var(--pink2));
+  color:#160012;
+}
+
+.btn.yes{
+  background: linear-gradient(90deg, #39ffb4, #6ee7ff);
+  color:#001016;
+}
+
+.btn.no{
+  background: #ffffff12;
+  border: 1px solid #ffffff22;
+  color: white;
+  position: relative;
+}
+
+.tiny{
+  margin-top: 14px;
+  color: #cfcfe7aa;
+  font-size: .85rem;
+}
+
+.letterBox{
+  background: #00000025;
+  border: 1px solid #ffffff1a;
+  border-radius: 18px;
+  padding: 14px;
+  min-height: 240px;
+  color: #f1f1ff;
+  line-height: 1.7;
+  font-size: 1rem;
+  white-space: pre-wrap;
+}
+
+.gallery{
+  display:grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+  margin-top: 14px;
+}
+
+.frame{
+  border-radius: 20px;
+  overflow:hidden;
+  border: 1px solid #ffffff1f;
+  background: #00000030;
+}
+
+.frame img{
+  width:100%;
+  height:auto;
+  display:block;
+}
+
+.finalLine{
+  margin-top: 16px;
+  text-align:center;
+  font-weight: 800;
+  font-size: 1.05rem;
+  color: #ffe4f3;
+  text-shadow: 0 0 18px #ff4da633;
+}
+
+@keyframes fadeIn{
+  from{ opacity:0; transform: translateY(8px); }
+  to{ opacity:1; transform: translateY(0); }
+}
+
+/* Floating hearts */
+.hearts{
+  position: fixed;
+  inset:0;
+  pointer-events:none;
+  overflow:hidden;
+  z-index:0;
+}
+
+.heart{
+  position:absolute;
+  width: 14px;
+  height: 14px;
+  transform: rotate(45deg);
+  opacity: .85;
+  filter: drop-shadow(0 0 10px #ff4da633);
+  animation: floatUp linear forwards;
+}
+
+.heart:before,
+.heart:after{
+  content:"";
+  position:absolute;
+  width:14px;
+  height:14px;
+  background: currentColor;
+  border-radius: 50%;
+}
+
+.heart{
+  background: currentColor;
+}
+
+.heart:before{ left:-7px; top:0; }
+.heart:after{ top:-7px; left:0; }
+
+@keyframes floatUp{
+  from{ transform: translateY(30px) rotate(45deg); }
+  to{ transform: translateY(-110vh) rotate(45deg); }
+}
+
+/* keep content above hearts */
+main, header, section, .card{ position:relative; z-index:1; }
